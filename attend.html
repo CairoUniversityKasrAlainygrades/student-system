@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Kasr Al-Ainy</title>
+    <style>
+        /* CSS STYLES */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Top Blue Header */
+        header {
+            background-color: #006ec1;
+            color: white;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-left img {
+            height: 32px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        /* Main Content Container */
+        .main-content {
+            padding: 25px;
+            max-width: 450px; /* Aligned to the left like the photo */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* The Data Boxes */
+        .data-box {
+            border: 1px solid #d0d0d0;
+            border-radius: 3px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        /* Gray Search Bar */
+        .box-header {
+            display: flex;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #d0d0d0;
+            height: 40px;
+        }
+
+        .search-icon-section {
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid #d0d0d0;
+            color: #666;
+        }
+
+        .input-area {
+            flex-grow: 1;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-area input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .go-btn {
+            background-color: #ffffff;
+            border-left: 1px solid #d0d0d0;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Empty State Content */
+        .box-body {
+            padding: 45px 20px;
+            text-align: center;
+            color: #888;
+        }
+
+        .big-icon {
+            font-size: 45px;
+            color: #dfdfdf;
+            margin-bottom: 10px;
+        }
+
+        .empty-text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <span style="font-size:22px; cursor:pointer;">☰</span>
+            <img src="http://smis.medicine.cu.edu.eg:5555/ords/r/fctstu/123468/files/static/v32/icons/app-icon-512.png" alt="Logo">
+            <span style="font-weight: 500; font-size: 18px;">Students</span>
+        </div>
+        <div class="header-right">
+            <span>💬</span>
+            <span>❓ ▼</span>
+            <span>👤 20253154 ▼</span>
+        </div>
+    </header>
+
+    <div class="main-content">
+        
+        <div class="data-box">
+            <div class="box-header">
+                <div class="search-icon-section">🔍 ▼</div>
+                <div class="input-area"><input type="text"></div>
+                <div class="go-btn">Go</div>
+            </div>
+            <div class="box-body">
+                <div class="big-icon">🔍</div>
+                <div class="empty-text">No data found.</div>
+            </div>
+        </div>
+
+        <div class="data-box">
+            <div class="box-header">
+                <div class="search-icon-section">🔍 ▼</div>
+                <div class="input-area"><input type="text"></div>
+                <div class="go-btn">Go</div>
+            </div>
+            <div class="box-body">
+                <div class="big-icon">🔍</div>
+                <div class="empty-text">No data found.</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

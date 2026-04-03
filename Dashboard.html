@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Kasr Al-Ainy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+
+        header {
+            background-color: #006ec1;
+            color: white;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-left img {
+            height: 35px;
+            border-radius: 4px;
+        }
+
+        .header-left span {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .menu-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .menu-item:hover {
+            background-color: #f5f9ff;
+        }
+
+        .menu-text {
+            font-size: 15px;
+        }
+
+        .icon-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .bg-blue { background-color: #3498db; }
+        .bg-cyan { background-color: #1abc9c; }
+        .bg-teal { background-color: #16a085; }
+        .bg-green { background-color: #27ae60; }
+        .bg-light-green { background-color: #8bc34a; }
+        .bg-yellow { background-color: #d4d442; }
+        .bg-orange { background-color: #f39c12; }
+        .bg-deep-orange { background-color: #e67e22; }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #006ec1;
+            border-top: 1px solid #eee;
+        }
+
+        .visitor-count {
+            margin-top: 10px;
+            color: #006ec1;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <img src="http://smis.medicine.cu.edu.eg:5555/ords/r/fctstu/123468/files/static/v32/icons/app-icon-512.png" alt="Logo">
+            <span>Students</span>
+        </div>
+        <div class="header-right">
+            <div class="nav-icons">
+                <i class="fa-regular fa-comment-dots"></i>
+                <i class="fa-regular fa-circle-question"></i>
+            </div>
+            <div class="user-section">
+                <i class="fa-regular fa-circle-user"></i>
+                <span>20253154</span>
+                <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-container">
+            <a href="personal_data.html" class="menu-item">
+                <span class="menu-text">Personal Data</span>
+                <div class="icon-circle bg-blue"><i class="fa-solid fa-id-card"></i></div>
+            </a>
+            
+            <a href="attend.html" class="menu-item">
+                <span class="menu-text">Attend report</span>
+                <div class="icon-circle bg-cyan"><i class="fa-regular fa-clock"></i></div>
+            </a>
+
+            <a href="schedule.html" class="menu-item">
+                <span class="menu-text">Schedule</span>
+                <div class="icon-circle bg-teal"><i class="fa-regular fa-calendar-days"></i></div>
+            </a>
+
+            <a href="score.html" class="menu-item">
+                <span class="menu-text">Score</span>
+                <div class="icon-circle bg-green"><i class="fa-solid fa-user-graduate"></i></div>
+            </a>
+
+            <a href="request.html" class="menu-item">
+    <span class="menu-text">Request</span>
+    <div class="icon-circle bg-light-green"><i class="fa-solid fa-file-circle-plus"></i></div>
+</a>
+
+            <a href="examtime.html" class="menu-item">
+    <span class="menu-text">Exam Time</span>
+    <div class="icon-circle bg-yellow"><i class="fa-solid fa-clock-rotate-left"></i></div>
+</a>
+            <a href="library.html" class="menu-item">
+    <span class="menu-text">library</span>
+    <div class="icon-circle bg-orange"><i class="fa-solid fa-book-open"></i></div>
+</a>
+
+            <a href="http://mis.medicine.cu.edu.eg/moodle/" class="menu-item" target="_blank">
+    <span class="menu-text">moodle</span>
+    <div class="icon-circle bg-deep-orange"><i class="fa-solid fa-circle"></i></div>
+</a>
+        </div>
+
+        <a href="index.html" class="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> الخروج
+        </a>
+
+        <footer>
+            All rights reserved - Mis Unit - Faculty of Medicine, Cairo University © 2023 - V1.0
+            <div class="visitor-count">عدد الزائرين 2015123</div>
+        </footer>
+    </main>
+
+</body>
+</html>

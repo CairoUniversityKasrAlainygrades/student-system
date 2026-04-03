@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Certificate - Students System</title>
+    <style>
+        /* CSS STYLES */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Top Blue Header */
+        header {
+            background-color: #006ec1;
+            color: white;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-left img {
+            height: 32px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 14px;
+        }
+
+        /* Main Content Container */
+        .main-content {
+            padding: 25px;
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-card {
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        /* Arabic Header and Button */
+        .page-title {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .btn-green {
+            background-color: #2c8e1e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            float: right;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .btn-green:hover {
+            background-color: #247518;
+        }
+
+        /* Actions/Search Bar */
+        .actions-container {
+            clear: both;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f7f7f7;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-bottom: -1px; /* Overlap with result box */
+        }
+
+        .search-group {
+            display: flex;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .search-icon {
+            padding: 8px 10px;
+            color: #888;
+        }
+
+        .search-group input {
+            border: none;
+            padding: 8px;
+            outline: none;
+            width: 180px;
+        }
+
+        .go-btn {
+            border: none;
+            border-left: 1px solid #ccc;
+            background: white;
+            padding: 0 15px;
+            font-weight: bold;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .actions-btn {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 7px 15px;
+            font-size: 13px;
+            border-radius: 3px;
+            color: #444;
+            cursor: pointer;
+        }
+
+        /* Empty Result State */
+        .result-box {
+            border: 1px solid #d0d0d0;
+            border-radius: 0 0 4px 4px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        .large-magnifier {
+            font-size: 40px;
+            color: #e0e0e0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fcfcfc;
+            border-top: 1px solid #eee;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #777;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <span style="font-size:20px; cursor:pointer;">☰</span>
+            <img src="http://smis.medicine.cu.edu.eg:5555/ords/r/fctstu/123468/files/static/v32/icons/app-icon-512.png" alt="Logo">
+            <span style="font-weight: 500; font-size: 18px;">Students</span>
+        </div>
+        <div class="header-right">
+            <span>💬</span>
+            <span>❓ ▼</span>
+            <span>👤 20253154 ▼</span>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="form-card">
+            <div class="page-title">شهادة قيد</div>
+            
+            <button class="btn-green">طلب جديد</button>
+
+            <div class="actions-container">
+                <div class="search-group">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search...">
+                    <button class="go-btn">Go</button>
+                </div>
+                <button class="actions-btn">Actions ▼

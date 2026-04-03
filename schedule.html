@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Schedule - Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+
+        /* Blue Header Bar */
+        header {
+            background-color: #006ec1;
+            color: white;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-left img {
+            height: 35px;
+            background: white;
+            border-radius: 4px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        /* Container for Cards */
+        .main-container {
+            padding: 20px;
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Filters Section */
+        .filters {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #444;
+            background-color: #fff;
+        }
+
+        .full-width { grid-column: span 2; }
+        .half-width { width: 50%; }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .radio-group input { margin-right: 5px; }
+
+        /* Calendar Header */
+        .cal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cal-nav { display: flex; gap: 5px; }
+
+        .btn {
+            border: 1px solid #ccc;
+            background: white;
+            padding: 5px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .cal-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 400;
+            color: #444;
+        }
+
+        .view-toggle { display: flex; border-radius: 4px; overflow: hidden; }
+        .view-toggle button {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .view-toggle .active { background: #e0e0e0; }
+
+        /* Calendar Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background: #fff;
+            font-weight: bold;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            height: 80px;
+            padding: 5px;
+            text-align: right;
+            vertical-align: top;
+            color: #777;
+        }
+
+        .other-month { color: #ccc; }
+        .highlight { background-color: #fff9c4; } /* Yellow highlight for Fri 3rd */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <span style="font-size:24px; cursor:pointer;">☰</span>
+            <img src="http://smis.medicine.cu.edu.eg:5555/ords/r/fctstu/123468/files/static/v32/icons/app-icon-512.png" alt="University Logo">
+            <span style="font-size: 20px; font-weight: 500;">Students</span>
+        </div>
+        <div class="header-right">
+            <span>💬</span>
+            <span>❓ ▼</span>
+            <span>👤 20253154 ▼</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <div class="card">
+            <div class="filters">
+                <select><option>All Module</option></select>
+                <select><option>all Group</option></select>
+                <select class="full-width"><option>ALL Subject</option></select>
+                <select class="half-width"><option>No</option></select>
+            </div>
+            <div class="radio-group">
+                <label><input type="radio" name="d" checked> Depatment</label>
+                <label><input type="radio" name="d"> Group</label>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cal-top">
+                <div class="cal-nav">
+                    <button class="btn">&lt;</button>
+                    <button class="btn">&gt;</button>
+                    <button class="btn">today</button>
+                </div>
+                <div class="cal-title">April 2026</div>
+                <div class="view-toggle">
+                    <button class="active">month</button>
+                    <button>day</button>
+                    <button>list</button>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="other-month">29</td><td class="other-month">30</td><td class="other-month">31</td>
+                        <td>1</td><td>2</td><td class="highlight">3</td><td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td class="other-month">1</td><td class="other-month">2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
